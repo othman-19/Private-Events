@@ -3,7 +3,8 @@ class SessionsController < ApplicationController
   end
   def create
     user = User.find_by(name: params[:session][:name]) 
-    if (user && user.name = (params[:session][:name])) || (user && user.id = (params[:session][:id]))
+    if user && user.name = (params[:session][:name])
+      session[:user_id] = user.id
       log_in user
       redirect_to user
     else
