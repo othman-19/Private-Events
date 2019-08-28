@@ -3,6 +3,6 @@ class Event < ApplicationRecord
   has_many :attendances, :foreign_key => "attended_event_id"
   has_many :attendees, :through => :attendances, foreign_key: "attendee_id"
 
-  scope :in_future, -> {where("date > ?", DateTime.now)}
-  scope :in_past, -> {where("date < ?", DateTime.now)}
+  scope :past, ->{where("date < ?", DateTime.now)}
+  scope :upcoming, ->{where("date > ?", DateTime.now)}
 end
