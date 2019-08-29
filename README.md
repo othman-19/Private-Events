@@ -1,24 +1,32 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Project: Memebers Only!
+  A simple app that organize events and users, using rails associations.
+## prerequisite
+1. Git.
+2. Code editor.
+3. Code linter.
+4. Rails.
+5. Browser. 
 
-Things you may want to cover:
+## How to run the program
+1. Open the terminal.
 
-* Ruby version
+2. Enter `git clone https://github.com/othman-19/private-events`.
 
-* System dependencies
+3. Navigate to the cloned repository.
 
-* Configuration
+4. In the terminal cd into private-events.
 
-* Database creation
+5. Install bundle by typing `bundle install` and update it by typing `bundle update` in the terminal.
 
-* Database initialization
+6. Run the rails server by typing `rails server` in the terminal.
 
-* How to run the test suite
+7. Create a new users and events.
 
-* Services (job queues, cache servers, search engines, etc.)
+8. If you get an error message on the browser like this: "Migrations are pending. To resolve this issue, run: bin/rails db:migrate RAILS_ENV=development", just got to the terminal and run: `bin/rails db:migrate RAILS_ENV=development` then refresh your page.
 
-* Deployment instructions
 
-* ...
+## Contributor(s)
+1. [Othamane Naamani](https://github.com/othman-19/).
+2. [Molnar Emese](https://github.com/Mesi21).
