@@ -1,0 +1,13 @@
+
+<div class="row">
+  <div class="col-md-6 form-new-user col-md-offset-3">
+    <ul>
+    <% @events.each do |event| %>
+        <li><h3><%= event.title %></h3></li>
+        <li><%= event.description %></li>
+        <li><%= event.location %></li>
+        <li><%= event.date %></li>
+    <% end %>
+    </ul>
+  </div>
+</div> 
