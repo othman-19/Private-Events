@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class EventsController < ApplicationController
   def new
     @event = Event.new
@@ -21,7 +23,8 @@ class EventsController < ApplicationController
   end
 
   private
-    def event_params
-      params.require(:event).permit(:title, :date, :location, :description)
-    end
+
+  def event_params
+    params.require(:event).permit(:title, :date, :location, :description)
+  end
 end

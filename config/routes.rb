@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   root 'events#index'
   get '/newevent', to: 'events#new'
@@ -8,6 +10,6 @@ Rails.application.routes.draw do
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
-  resources :events, only: [:new, :show, :index, :create]
-  resources :users, only: [:show,:new,:create]
+  resources :events, only: %i[new show index create]
+  resources :users, only: %i[show new create]
 end

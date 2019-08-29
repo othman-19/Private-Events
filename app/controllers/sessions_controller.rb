@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 class SessionsController < ApplicationController
-  def new
-  end
+  def new; end
+
   def create
-    user = User.find_by(name: params[:session][:name]) 
+    user = User.find_by(name: params[:session][:name])
     if user && user.name = (params[:session][:name])
       session[:user_id] = user.id
       log_in user
@@ -12,6 +14,6 @@ class SessionsController < ApplicationController
       render 'new'
     end
   end
-  def destroy
-  end
+
+  def destroy; end
 end
