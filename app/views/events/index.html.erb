@@ -4,7 +4,7 @@
   <h3> All Events </h3>
     <ul>
     <% @events.each do |event| %>
-        <li><h3><%= link_to event.title, event_path(@event) %></h3></li>
+        <li><h3><%= link_to event.title, event_path(event) %></h3></li>
         <li><%= event.description %></li>
         <li><%= event.location %></li>
         <li><%= event.date %></li>
@@ -18,7 +18,7 @@
   <h3> Past Events </h3>
     <ul>
     <% Event.past.each do |event| %>
-        <li><h3><%= event.title %></h3></li>
+        <li><h3><%= link_to event.title, event_path(event)  %></h3></li>
         <li><%= event.description %></li>
         <li><%= event.location %></li>
         <li><%= event.date %></li>
@@ -32,7 +32,7 @@
   <h3> Future Events </h3>
     <ul>
     <% Event.upcoming.each do |event| %>
-        <li><h3><%= event.title %></h3></li>
+        <li><h3><%= link_to event.title, event_path(event)  %></h3></li>
         <li><%= event.description %></li>
         <li><%= event.location %></li>
         <li><%= event.date %></li>
