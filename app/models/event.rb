@@ -10,6 +10,6 @@ class Event < ApplicationRecord
 
   validates :title, presence: true
   validates :description, presence: true
-  validate :date ,presence: true
-	validates :location, presence: true
+  validate :date, presence: true
+  validates :location, presence: true
 end
