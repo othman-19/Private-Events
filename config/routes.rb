@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/newevent', to: 'events#new'
   post '/newevent', to: 'events#create'
   get 'sessions/new'
+  get 'users', to: 'users#index'
   get 'signup', to: 'users#new'
   post 'signup', to: 'users#create'
   get    '/login',   to: 'sessions#new'

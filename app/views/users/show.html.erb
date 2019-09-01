@@ -3,7 +3,7 @@
   <div class="col-md-6 form-new-user col-md-offset-3">
     <ul>
     <% @user.created_events.each do |event| %>
-        <li><%= event.title %></li>
+        <li><%= link_to event.title, event_path(event) %></li>
     <% end %>
     </ul>
   </div>
@@ -14,7 +14,7 @@
   <h1>Attending Events</h1>
   <ul>
     <% @user.attended_events.each do |attended| %>
-      <li><h3><%= attended.title %></h3></li>  
+      <li><h3><%= link_to attended.title, event_path(attended)  %></h3></li>  
     <% end %>
   </ul>
   </div>
@@ -25,7 +25,7 @@
     <h1>Future Events</h1>
     <ul>
       <% @upcoming_events.each do |event| %>
-        <li><h3><%= event.title %></h3></li>  
+        <li><h3><%= link_to event.title, event_path(event) %></h3></li>  
       <% end %>
     </ul>
   </div>
@@ -34,7 +34,7 @@
     <h1>Past Events</h1>
     <ul>
       <% @past_events.each do |event| %>
-        <li><h3><%= event.title %></h3></li>  
+        <li><h3><%=link_to event.title, event_path(event) %></h3></li>  
       <% end %>
     </ul>
   </div>
