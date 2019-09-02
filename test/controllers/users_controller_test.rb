@@ -7,7 +7,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     get new_user_path
     assert_response :success
   end
-  
+
   # test "login with invalid information" do
   #   get login_path
   #   assert_template 'sessions/new'
