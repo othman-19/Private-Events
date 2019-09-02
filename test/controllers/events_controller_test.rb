@@ -3,13 +3,14 @@
 require 'test_helper'
 
 class EventsControllerTest < ActionDispatch::IntegrationTest
-  test 'should get new' do
-    get events_new_url
-    assert_response :success
+  def setup
+    @user = :user1
+    @event = @user.events.build(title: "User7 event", description: "User7 event description")
   end
 
-  test 'should get show' do
-    get events_show_url
-    assert_response :success
+  test "should be valid" do
+    assert @event.valid?
   end
+
+  
 end
