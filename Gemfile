@@ -52,11 +52,16 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-group :test do
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
+group :development, :test do
+  # The RSpec testing framework
+  gem 'rspec-rails'
+ 
+  # Capybara, the library that allows us to interact with the browser using Ruby
+  gem 'capybara'
+ 
+  # The following two gems aid with the nuts and bolts
+  # of interacting with the browser.
   gem 'selenium-webdriver'
-  # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
 end
 
