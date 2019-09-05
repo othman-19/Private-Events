@@ -20,12 +20,6 @@ RSpec.describe User, type: :model do
 
   # User model validations Tests.
   context 'he must have valid information' do
-    before(:each) do
-      user9 = User.create!(name: 'user9',
-                           email: 'user9@gmail.com',
-                           password: 'password')
-    end
-
     it 'should be valid ' do
       User.build(:user).should be_valid
     end
