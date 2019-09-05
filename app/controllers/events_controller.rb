@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+#Events controller
 class EventsController < ApplicationController
   def new
     @event = Event.new

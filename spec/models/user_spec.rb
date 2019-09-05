@@ -14,10 +14,6 @@ RSpec.describe User, type: :model do
     end
 
     it 'has one event after creation' do
-      event8 = user8.created_events.create(title: 'event1',
-                                           description: 'event8 description',
-                                           date: '01-01-2020',
-                                           location: 'remote')
       expect(user8.created_events.count).to eq 1
     end
   end

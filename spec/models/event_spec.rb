@@ -16,13 +16,6 @@ RSpec.describe Event, type: :model do
 
   # User model validations Tests.
   context 'he must have valid information' do
-    before(:each) do
-      event9 = Event.create(title: 'event9',
-                            description: 'event9 description',
-                            date: '01-01-2020',
-                            location: 'remote')
-    end
-
     it 'should be valid ' do
       Event.build(:event).should be_valid
     end
