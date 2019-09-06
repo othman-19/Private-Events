@@ -24,5 +24,16 @@
   </div>
 </div> 
 
+<div class="row">
+  <div class="col-md-6 form-new-user col-md-offset-3">
+  <h1>Event Attendances</h1>
+  <ul>
+    <% @event.attendances.each do |attendance| %>
+      <li><h3><%= attendance.id %></h3></li>  
+    <% end %>
+  </ul>
+  </div>
+</div> 
+
 
 
