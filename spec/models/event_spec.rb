@@ -1,23 +1,59 @@
 # frozen_string_literal: true
-
 require 'rails_helper'
 
+# Event model tests.
 RSpec.describe Event, type: :model do
-  # Event model associations Tests.
-  context 'He have association with creator' do
-    it 'event foreign key should equal to user id' do
-      event8 = user8.created_events.create(title: 'event8',
-                                           description: 'event8 description',
-                                           date: '01-01-2020',
-                                           location: 'remote')
-      expect(event8.creator_id).to eq user8.id
+  
+  context 'Association tests' do
+    describe "Event model associations" do
+      it "belongs to creator" do
+        assc = Event.reflect_on_association(:creator)
+        expect(assc.macro).to eq :belongs_to
+      end
+      it "has many attendances" do
+        assc = Event.reflect_on_association(:attendances)
+        expect(assc.macro).to eq :has_many
+      end
+      it "has many attendees" do
+        assc = Event.reflect_on_association(:attendees)
+        expect(assc.macro).to eq :has_many
+      end
     end
   end
 
-  # User model validations Tests.
-  context 'he must have valid information' do
-    it 'should be valid ' do
-      Event.build(:event).should be_valid
+  context 'Validation tests' do
+    subject {Event.new}
+    let (:event_creator) {User.new(name:"event_creator", email: "creator@gmail.com", password:"password")}
+    it "is valid with valid attributes" do
+      subject.title = "Anything"
+      subject.description = "Anything description"
+      subject.date = DateTime.now
+      subject.location = "Remote"
+      subject.creator = event_creator
+      expect(subject).to be_valid
+    end
+
+    it "is not valid without a title" do
+      expect(subject).to_not be_valid
+    end
+
+    it "is not valid without a description" do
+      subject.title = "Anything"
+      expect(subject).to_not be_valid
+    end
+
+    it "is not valid without a date" do
+      subject.title = "Anything"
+      subject.description = "Lorem ipsum dolor sit amet"
+      expect(subject).to_not be_valid
+    end
+
+    it "is not valid without a location" do
+      subject.title = "Anything"
+      subject.description = "Lorem ipsum dolor sit amet"
+      subject.date = DateTime.now
+      expect(subject).to_not be_valid
     end
   end
 end
+

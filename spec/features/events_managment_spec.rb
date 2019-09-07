@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 require 'rails_helper'
-
+require 'capybara/rspec'
 RSpec.describe 'events managments', type: :feature do
   scenario 'events managments have all events index' do
     visit events_path
