@@ -38,13 +38,13 @@ RSpec.configure do |config|
   end
 
   # This block must be here, do not combine with the
-  #other `before(:each)` block.
-  #This makes it so Capybara can see the database.
-    config.before(:each) do
-      DatabaseCleaner.start
-    end
+  # other `before(:each)` block.
+  # This makes it so Capybara can see the database.
+  config.before(:each) do
+    DatabaseCleaner.start
+  end
 
-    config.after(:each) do
-      DatabaseCleaner.clean
-    end
+  config.after(:each) do
+    DatabaseCleaner.clean
+  end
 end
