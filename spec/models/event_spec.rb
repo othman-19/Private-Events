@@ -20,10 +20,9 @@ RSpec.describe Event, type: :model do
       end
     end
   end
-
   context 'Validation tests' do
     subject { Event.new }
-    let (:event_creator) { User.new(name: 'event_creator', email: 'creator@gmail.com', password: 'password') }
+    let(:event_creator) { User.new(name: 'event_creator', email: 'creator@gmail.com', password: 'password') }
     it 'is valid with valid attributes' do
       subject.title = 'Anything'
       subject.description = 'Anything description'
@@ -32,22 +31,18 @@ RSpec.describe Event, type: :model do
       subject.creator = event_creator
       expect(subject).to be_valid
     end
-
     it 'is not valid without a title' do
       expect(subject).to_not be_valid
     end
-
     it 'is not valid without a description' do
       subject.title = 'Anything'
       expect(subject).to_not be_valid
     end
-
     it 'is not valid without a date' do
       subject.title = 'Anything'
       subject.description = 'Lorem ipsum dolor sit amet'
       expect(subject).to_not be_valid
     end
-
     it 'is not valid without a location' do
       subject.title = 'Anything'
       subject.description = 'Lorem ipsum dolor sit amet'
