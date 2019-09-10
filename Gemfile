@@ -5,6 +5,8 @@ ruby '2.6.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
+gem 'bcrypt',  '3.1.12'
+gem 'bootstrap-sass', '3.3.7'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
@@ -50,12 +52,17 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-group :test do
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
+group :development, :test do
+  # The RSpec testing framework
+  gem 'rspec-rails'
+ 
+  # Capybara, the library that allows us to interact with the browser using Ruby
+  gem 'capybara'
+  gem 'database_cleaner', '~> 1.7'
+  # The following two gems aid with the nuts and bolts
+  # of interacting with the browser.
+  gem 'webdrivers', '~> 4.0'
   gem 'selenium-webdriver'
-  # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
