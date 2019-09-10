@@ -4,7 +4,7 @@ require 'rails_helper'
 require 'capybara/rspec'
 RSpec.feature 'Forms', type: :feature do
 
-  scenario 'User can login with registered name' do
+  scenario 'Authentication User can login with registered name' do
     user11 = User.create(name:'user11',
                   email: 'user11@gmail.com',
                   password: 'password')
