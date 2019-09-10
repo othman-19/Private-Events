@@ -61,8 +61,8 @@ group :development, :test do
   gem 'database_cleaner', '~> 1.7'
   # The following two gems aid with the nuts and bolts
   # of interacting with the browser.
+  gem 'webdrivers', '~> 4.0'
   gem 'selenium-webdriver'
-  gem 'chromedriver-helper'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
